@@ -1,12 +1,110 @@
 @import "tailwindcss";
 
+:root {
+  --tag-red: #6d3531;
+  --tag-red-bg: #ce18002a;
+  --tag-red-border: rgba(109, 53, 49, 0.3);
+
+  --tag-orange: #6a4222;
+  --tag-orange-bg: #c4580034;
+  --tag-orange-border: rgba(106, 66, 34, 0.3);
+
+  --tag-yellow: #655121;
+  --tag-yellow-bg: #d19c0048;
+  --tag-yellow-border: rgba(101, 81, 33, 0.3);
+
+  --tag-green: #2a533c;
+  --tag-green-bg: #00602628;
+  --tag-green-border: rgba(42, 83, 60, 0.3);
+
+  --tag-blue: #264a72;
+  --tag-blue-bg: #0076d934;
+  --tag-blue-border: rgba(38, 74, 114, 0.3);
+
+  --tag-purple: #553b69;
+  --tag-purple-bg: #5c00a324;
+  --tag-purple-border: rgba(85, 59, 105, 0.3);
+
+  --tag-pink: #68354e;
+  --tag-pink-bg: #b7004e27;
+  --tag-pink-border: rgba(104, 53, 78, 0.3);
+
+  --tag-neutral: #2c2c2b;
+  --tag-neutral-bg: #2a1c0012;
+  --tag-neutral-border: rgba(44, 44, 43, 0.3);
+
+  --tag-gray: #494846;
+  --tag-gray-bg: #1c13011c;
+  --tag-gray-border: rgba(73, 72, 70, 0.3);
+}
+
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #171717;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
+}
+
+@layer utilities {
+  .tag-red {
+    background-color: var(--tag-red-bg);
+    color: var(--tag-red);
+    border-color: var(--tag-red-border);
+  }
+
+  .tag-orange {
+    background-color: var(--tag-orange-bg);
+    color: var(--tag-orange);
+    border-color: var(--tag-orange-border);
+  }
+
+  .tag-yellow {
+    background-color: var(--tag-yellow-bg);
+    color: var(--tag-yellow);
+    border-color: var(--tag-yellow-border);
+  }
+
+  .tag-green {
+    background-color: var(--tag-green-bg);
+    color: var(--tag-green);
+    border-color: var(--tag-green-border);
+  }
+
+  .tag-blue {
+    background-color: var(--tag-blue-bg);
+    color: var(--tag-blue);
+    border-color: var(--tag-blue-border);
+  }
+
+  .tag-purple {
+    background-color: var(--tag-purple-bg);
+    color: var(--tag-purple);
+    border-color: var(--tag-purple-border);
+  }
+
+  .tag-pink {
+    background-color: var(--tag-pink-bg);
+    color: var(--tag-pink);
+    border-color: var(--tag-pink-border);
+  }
+
+  .tag-neutral {
+    background-color: var(--tag-neutral-bg);
+    color: var(--tag-neutral);
+    border-color: var(--tag-neutral-border);
+  }
+
+  .tag-gray {
+    background-color: var(--tag-gray-bg);
+    color: var(--tag-gray);
+    border-color: var(--tag-gray-border);
+  }
 }

@@ -1,9 +1,18 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { projects } from "@/app/data/projects";
 import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <section id="projects">
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="w-full px-5 py-20 lg:px-20 2xl:px-40">
         <div className="mb-10 space-y-4">
           <p className="text-3xl font-semibold tracking-tighter 2xl:text-4xl">
@@ -20,6 +29,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

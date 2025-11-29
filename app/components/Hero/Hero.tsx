@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { SiHashnode, SiSmugmug, SiNotion } from "react-icons/si";
@@ -43,7 +44,12 @@ export default function Hero() {
         </div>
 
         <div className="absolute top-0 w-full">
-          <div className="mx-auto flex items-center justify-between px-5 py-8 lg:px-20 2xl:px-40">
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mx-auto flex items-center justify-between px-5 py-8 lg:px-20 2xl:px-40"
+          >
             <Link href={"/"}>
               <h1 className="text-xl font-semibold tracking-tighter text-zinc-800 2xl:text-2xl">
                 J.Portfolio
@@ -78,7 +84,7 @@ export default function Hero() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
           <div className="px-5 md:hidden">
             <input
               type="text"
@@ -93,7 +99,12 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-5 lg:w-fit">
           <div className="mx-auto flex flex-col items-start justify-center">
             <div className="mb-8">
-              <div className="mb-4 space-x-1.5 text-lg md:text-xl">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mb-4 space-x-1.5 text-lg md:text-xl"
+              >
                 <span className="text-[#878787]">HI</span>
                 <span className="font-medium">
                   {visitorName ? visitorName : "STRANGER"}
@@ -101,8 +112,13 @@ export default function Hero() {
                 <span className="inline-block">
                   <SiSmugmug />
                 </span>
-              </div>
-              <div className="mb-8 text-6xl font-medium tracking-tighter text-zinc-800 sm:text-7xl md:text-8xl">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.27 }}
+                className="mb-8 text-6xl font-medium tracking-tighter text-zinc-800 sm:text-7xl md:text-8xl"
+              >
                 <div className="mb-1.5 flex items-center gap-3 md:gap-8">
                   <span>I&apos;m</span>
                   <span>Jeongeun,</span>
@@ -114,27 +130,57 @@ export default function Hero() {
                   </div>
                   <span>UI.</span>
                 </div>
-              </div>
-              <p className="text-base text-zinc-700 md:text-lg">
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.34 }}
+                className="text-base text-zinc-700 md:text-lg"
+              >
                 안녕하세요. 의미 있는 사용자 경험을 설계하는 웹 퍼블리셔
                 이정은입니다.
-              </p>
+              </motion.p>
             </div>
             <div className="flex items-center gap-6 sm:gap-12 xl:hidden">
-              {folders.map((folder) => (
-                <FolderCard key={folder.link} {...folder} />
+              {folders.map((folder, i) => (
+                <motion.div
+                  key={folder.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.55,
+                    delay: 0.45 + i * 0.08,
+                  }}
+                >
+                  <FolderCard {...folder} />
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
 
         <div className="hidden items-center gap-8 xl:absolute xl:top-1/2 xl:left-20 xl:flex xl:-translate-y-1/2 xl:flex-col 2xl:left-40 2xl:gap-10">
-          {folders.map((folder) => (
-            <FolderCard key={folder.link} {...folder} />
+          {folders.map((folder, i) => (
+            <motion.div
+              key={folder.slug}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.55,
+                delay: 0.45 + i * 0.08,
+              }}
+            >
+              <FolderCard {...folder} />
+            </motion.div>
           ))}
         </div>
 
-        <div className="absolute bottom-0 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="absolute bottom-0 w-full"
+        >
           <div className="flex flex-wrap items-center justify-between px-5 pb-10 text-[#878787] lg:px-20 2xl:px-40">
             <p>2025 Web Publisher Portfolio</p>
             <p>
@@ -142,7 +188,7 @@ export default function Hero() {
               Built with Next.js, deployed on Vercel.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <ScrollingText />
       </div>

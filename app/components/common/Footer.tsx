@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { SiHashnode, SiNotion } from "react-icons/si";
 import { LuGithub } from "react-icons/lu";
 
@@ -7,7 +10,13 @@ export default function Footer() {
   return (
     <footer className="bg-zinc-100">
       <div className="mx-auto flex flex-col items-center justify-between px-5 py-12 pb-20 lg:px-20 2xl:px-40">
-        <div className="flex w-full flex-col items-center justify-between pb-10 lg:flex-row">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: true }}
+          className="flex w-full flex-col items-center justify-between pb-10 lg:flex-row"
+        >
           <div className="mb-8 flex flex-col items-center gap-8 md:flex-row md:gap-16 lg:mb-0">
             <p className="font-semibold text-zinc-800">J.Portfolio</p>
             <ul className="flex flex-col items-center gap-8 text-sm text-zinc-500 transition-all duration-300 sm:flex-row">
@@ -46,13 +55,19 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className="w-full border-t border-zinc-300 pt-10">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.06 }}
+          viewport={{ once: true }}
+          className="w-full border-t border-zinc-300 pt-10"
+        >
           <p className="text-center text-sm text-zinc-500">
             © 2025 Jeongeun Lee. Built with Next.js, deployed on Vercel.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

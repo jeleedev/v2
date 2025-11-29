@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { tools } from "@/app/data/tools";
 import Image from "next/image";
 import ToolItem from "./ToolItem";
@@ -5,13 +8,26 @@ import { LuMail, LuPhone, LuCalendar, LuMapPin } from "react-icons/lu";
 
 export default function About() {
   return (
-    <section id="about">
+    <motion.section
+      id="about"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="w-full px-5 py-20 lg:px-20 2xl:px-40">
         <p className="mb-10 text-3xl font-semibold tracking-tighter 2xl:text-4xl">
           About
         </p>
+
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:gap-20 2xl:gap-40">
-          <div className="flex w-full shrink-0 flex-col gap-8 sm:flex-row lg:w-fit lg:flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
+            viewport={{ once: true }}
+            className="flex w-full shrink-0 flex-col gap-8 sm:flex-row lg:w-fit lg:flex-col"
+          >
             <div className="relative aspect-square w-full shrink-0 sm:w-40 lg:w-80">
               <Image
                 src={"/common/profile.png"}
@@ -42,10 +58,22 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-col items-start gap-6 border-b border-zinc-200 pr-5 pb-10 lg:pb-14 2xl:flex-row 2xl:gap-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
+            viewport={{ once: true }}
+            className="min-w-0 flex-1"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, ease: "easeOut", delay: 0.25 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-start gap-6 border-b border-zinc-200 pr-5 pb-10 lg:pb-14 2xl:flex-row 2xl:gap-14"
+            >
               <p className="min-w-28 font-medium uppercase">about me</p>
               <div className="leading-loose">
                 <p className="mb-6">
@@ -95,8 +123,14 @@ export default function About() {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div className="flex flex-wrap justify-between gap-10 border-b border-zinc-200 py-10 pr-5 lg:gap-20 lg:py-14">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, ease: "easeOut", delay: 0.32 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-between gap-10 border-b border-zinc-200 py-10 pr-5 lg:gap-20 lg:py-14"
+            >
               <div className="flex flex-col items-start gap-6 2xl:flex-row 2xl:gap-14">
                 <p className="min-w-28 font-medium uppercase">education</p>
                 <ul className="space-y-8">
@@ -135,9 +169,14 @@ export default function About() {
                   </li>
                 </ul>
               </div>
-            </div>
-
-            <div className="flex flex-col items-start gap-6 pt-10 pr-5 lg:pt-14 2xl:flex-row 2xl:gap-14">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, ease: "easeOut", delay: 0.39 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-start gap-6 pt-10 pr-5 lg:pt-14 2xl:flex-row 2xl:gap-14"
+            >
               <p className="min-w-28 font-medium uppercase">USED TOOLS</p>
               <div className="flex flex-wrap gap-10">
                 <div>
@@ -157,10 +196,10 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -30,9 +30,9 @@ export default function PostCard({
         damping: 18,
         mass: 0.3,
       }}
-      className="group relative border border-zinc-200 transition-all duration-200 hover:border-zinc-300 hover:bg-zinc-50"
+      className="group relative h-full border border-zinc-200 transition-all duration-200 hover:border-zinc-300 hover:bg-zinc-50"
     >
-      <Link href={link} target="_blank" className="block p-8">
+      <Link href={link} target="_blank" className="block h-full p-8">
         <span className="absolute top-10 right-10 translate-x-0 translate-y-0 opacity-0 transition-all duration-200 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100">
           <LuArrowUpRight />
         </span>

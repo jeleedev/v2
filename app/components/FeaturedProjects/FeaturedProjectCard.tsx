@@ -16,6 +16,8 @@ export default function FeaturedProjectCard({
   contribution,
   demo,
   github,
+  figma,
+  notion,
 }: {
   title: string;
   description: string;
@@ -26,6 +28,8 @@ export default function FeaturedProjectCard({
   features?: string[];
   tech?: { name: string; color: string }[];
   contribution?: string;
+  figma?: string;
+  notion?: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -70,34 +74,43 @@ export default function FeaturedProjectCard({
         <div className="flex items-center justify-between">
           <p className="text-xl font-semibold">{title}</p>
           <div className="flex items-center gap-2 2xl:text-lg">
-            <Link
-              href={demo}
-              target="_blank"
-              className="rounded-lg bg-zinc-50 p-2 hover:bg-zinc-100"
-            >
-              <LuGlobe />
-            </Link>
-            <Link
-              href={github}
-              target="_blank"
-              className="rounded-lg bg-zinc-50 p-2 hover:bg-zinc-100"
-            >
-              <LuGithub />
-            </Link>
-            <Link
-              href={""}
-              target="_blank"
-              className="rounded-lg bg-zinc-50 p-2 hover:bg-zinc-100"
-            >
-              <LuFilePen />
-            </Link>
-            <Link
-              href={""}
-              target="_blank"
-              className="rounded-lg bg-zinc-50 p-2 hover:bg-zinc-100"
-            >
-              <LuFigma />
-            </Link>
+            {demo && (
+              <Link
+                href={demo}
+                target="_blank"
+                className="rounded-lg bg-zinc-50 p-2 transition-all duration-300 hover:bg-zinc-100 active:scale-95"
+              >
+                <LuGlobe />
+              </Link>
+            )}
+            {github && (
+              <Link
+                href={github}
+                target="_blank"
+                className="rounded-lg bg-zinc-50 p-2 transition-all duration-300 hover:bg-zinc-100 active:scale-95"
+              >
+                <LuGithub />
+              </Link>
+            )}
+
+            {figma && (
+              <Link
+                href={""}
+                target="_blank"
+                className="rounded-lg bg-zinc-50 p-2 transition-all duration-300 hover:bg-zinc-100 active:scale-95"
+              >
+                <LuFilePen />
+              </Link>
+            )}
+            {notion && (
+              <Link
+                href={""}
+                target="_blank"
+                className="rounded-lg bg-zinc-50 p-2 transition-all duration-300 hover:bg-zinc-100 active:scale-95"
+              >
+                <LuFigma />
+              </Link>
+            )}
           </div>
         </div>
 

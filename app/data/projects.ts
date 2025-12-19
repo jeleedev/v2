@@ -140,7 +140,7 @@ export const projects = [
     title: "2025 포트폴리오",
     description:
       "개인 프로젝트와 웹 퍼블리싱 작업을 정리한 \n포트폴리오 사이트",
-    demo: "",
+    demo: "https://jeongeun.vercel.app",
     github: "https://github.com/jeonqeun/portfolio",
     slug: "portfolio",
     featured: true,

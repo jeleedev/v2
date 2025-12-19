@@ -54,7 +54,7 @@ export default function About() {
                 </div>
                 <div className="flex items-center gap-2">
                   <LuMail />
-                  <span>zaekoch@gmail.com</span>
+                  <span>jeunlee.dev@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -77,45 +77,35 @@ export default function About() {
               <p className="min-w-28 font-medium uppercase">about me</p>
               <div className="leading-loose">
                 <p className="mb-6">
-                  의미 있는 사용자 경험을 위한 px 단위의 고민과, 그 결과가
-                  코드를 통해 화면에 구현되는 순간의 즐거움을 느끼며 웹
-                  퍼블리셔로서의 기반을 쌓아가고 있습니다. 웹 표준과 최적화를
-                  고려한 구조적인 마크업을 지향하며, 끊임없이 진화하는 웹
-                  퍼블리싱의 세계에서 유연하게 성장하는 퍼블리셔가 되기 위해
-                  새로운 것을 배우고 적용하는 데 열린 마음을 가지고 꾸준히
-                  공부하고 있습니다.
+                  웹 퍼블리셔는 코드와 디자인 사이에서 경험을 만드는 직업이라고
+                  생각합니다. 의미 있는 사용자 경험을 위한 디테일한 고민과, 그
+                  결과가 코드를 통해 화면에 구현되는 순간의 즐거움을 느끼며,
+                  끊임없이 진화하는 웹 퍼블리싱의 세계에서 유연하게 적응하고
+                  꾸준히 성장하는 퍼블리셔가 되겠습니다.
                 </p>
                 <ul className="list-disc pl-6">
                   <li className="py-0.5">
-                    퍼블리싱 역량을 기반으로 {""}
-                    <strong>
-                      프론트엔드 개발 흐름과 관련 기술 전반을 폭넓게 이해
-                    </strong>
-                    하고 있습니다.
+                    퍼블리싱 역량을 기반으로 프론트엔드 개발 흐름과 관련 기술
+                    전반을 폭넓게 이해하고 있습니다.
                   </li>
 
                   <li className="py-0.5">
                     웹 표준과 접근성을 준수하는 퍼블리싱 역량을 키우기 위해
-                    <strong> 웹디자인개발기능사 자격을 취득을 준비 중</strong>
-                    입니다.
+                    웹디자인개발기능사 자격을 취득을 준비 중입니다.
                   </li>
 
                   <li className="py-0.5">
                     비전공자로서 부족한 컴퓨터공학 기초를 보완하기 위해
-                    <strong> 정보처리기사를 취득</strong>했습니다.
+                    정보처리기사를 취득했습니다.
                   </li>
                   <li className="py-0.5">
-                    <strong>
-                      인공지능(AI)를 실무에 접목해 더 나은 결과를 만들어낼 수
-                      있는 방법에 대해 고민
-                    </strong>
-                    하고 있습니다.
+                    인공지능(AI)를 실무에 접목해 더 나은 결과를 만들어낼 수 있는
+                    방법에 대해 고민하고 있습니다.
                   </li>
                   <li className="py-0.5">
                     코드와 디자인 사이에서 얻은 인사이트와 개발 과정에서 배운
                     내용을 블로그에 기록하고 공유하고 있습니다.
                   </li>
-
                   <li className="py-0.5">
                     다양한 직군과 원활하게 협업하기 위해 웹 디자인뿐 아니라
                     개발, 기획, 마케팅 등 여러 분야에도 관심을 넓혀가고

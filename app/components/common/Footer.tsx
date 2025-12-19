@@ -1,10 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { SiHashnode, SiNotion } from "react-icons/si";
-import { LuGithub } from "react-icons/lu";
-
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { SiHashnode } from "react-icons/si";
+import { LuGithub } from "react-icons/lu";
 
 export default function Footer() {
   return (
@@ -47,11 +46,6 @@ export default function Footer() {
             <li className="cursor-pointer rounded-full border border-zinc-300 p-3 transition-all duration-300 hover:bg-white/70 hover:text-zinc-900">
               <Link href="https://jeongeun.hashnode.dev" target="_blank">
                 <SiHashnode />
-              </Link>
-            </li>
-            <li className="cursor-pointer rounded-full border border-zinc-300 p-3 transition-all duration-300 hover:bg-white/70 hover:text-zinc-900">
-              <Link href="" target="_blank">
-                <SiNotion />
               </Link>
             </li>
           </ul>

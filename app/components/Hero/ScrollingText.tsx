@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 
 export default function ScrollingText() {
   return (
-    <div className="absolute -bottom-20 left-0 -z-10 flex w-full items-center overflow-hidden text-[400px] font-extrabold -tracking-widest text-transparent opacity-4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.04 }}
+      transition={{ duration: 0.4, delay: 0.5 }}
+      className="absolute -bottom-20 left-0 -z-10 flex w-full items-center overflow-hidden text-[400px] font-extrabold -tracking-widest text-transparent opacity-4"
+    >
       <div
         className="flex whitespace-nowrap"
         style={{
@@ -43,6 +48,6 @@ export default function ScrollingText() {
           <span>jeongeunleeportfolio</span>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }

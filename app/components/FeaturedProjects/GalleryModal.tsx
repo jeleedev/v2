@@ -24,7 +24,7 @@ export default function GalleryModal({
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="fixed top-5 right-5 cursor-pointer text-2xl text-white transition hover:text-zinc-200 lg:top-10 lg:right-10 lg:text-3xl 2xl:top-12 2xl:right-12 2xl:text-4xl"
+          className="absolute -top-8 right-5 cursor-pointer text-3xl text-white transition hover:text-zinc-200"
           onClick={() => setOpen(false)}
         >
           ✕

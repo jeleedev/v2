@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { SiHashnode, SiSmugmug, SiNotion } from "react-icons/si";
+import { SiHashnode, SiSmugmug } from "react-icons/si";
 import { LuGithub } from "react-icons/lu";
 import Link from "next/link";
 import FolderCard from "./FolderCard";
@@ -63,7 +63,7 @@ export default function Hero() {
               onChange={handleChange}
               className="hidden min-w-96 rounded-md border border-black/10 bg-black/5 px-4 py-2 text-[13px] outline-none md:block"
             />
-            <ul className="flex items-center space-x-8 text-xl text-zinc-600 2xl:text-2xl">
+            <ul className="flex items-center space-x-6 text-xl text-zinc-600 sm:space-x-7 2xl:text-2xl">
               <li className="cursor-pointer transition-all duration-200 active:scale-90">
                 <Link
                   href={"https://github.com/jeonqeun"}
@@ -76,11 +76,6 @@ export default function Hero() {
               <li className="cursor-pointer transition-all duration-200 active:scale-90">
                 <Link href={"https://jeongeun.hashnode.dev"} target="_blank">
                   <SiHashnode />
-                </Link>
-              </li>
-              <li className="cursor-pointer transition-all duration-200 active:scale-90">
-                <Link href={""} target="_blank">
-                  <SiNotion />
                 </Link>
               </li>
             </ul>
@@ -137,7 +132,7 @@ export default function Hero() {
                 transition={{ duration: 0.55, delay: 0.34 }}
                 className="text-base text-zinc-700 md:text-lg"
               >
-                안녕하세요. 의미 있는 사용자 경험을 설계하는 웹 퍼블리셔
+                안녕하세요. 코드와 디자인 사이에서 경험을 설계하는 웹 퍼블리셔
                 이정은입니다.
               </motion.p>
             </div>

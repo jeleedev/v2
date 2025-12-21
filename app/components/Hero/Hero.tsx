@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { SiHashnode, SiSmugmug } from "react-icons/si";
+import { SiTistory, SiSmugmug } from "react-icons/si";
 import { LuGithub } from "react-icons/lu";
 import Link from "next/link";
 import FolderCard from "./FolderCard";
@@ -74,8 +74,8 @@ export default function Hero() {
                 </Link>
               </li>
               <li className="cursor-pointer transition-all duration-200 active:scale-90">
-                <Link href={"https://jeongeun.hashnode.dev"} target="_blank">
-                  <SiHashnode />
+                <Link href={"https://mnije.tistory.com/"} target="_blank">
+                  <SiTistory />
                 </Link>
               </li>
             </ul>

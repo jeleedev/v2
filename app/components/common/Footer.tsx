@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { SiHashnode } from "react-icons/si";
+import { SiTistory } from "react-icons/si";
 import { LuGithub } from "react-icons/lu";
 
 export default function Footer() {
@@ -44,8 +44,8 @@ export default function Footer() {
               </Link>
             </li>
             <li className="cursor-pointer rounded-full border border-zinc-300 p-3 transition-all duration-300 hover:bg-white/70 hover:text-zinc-900">
-              <Link href="https://jeongeun.hashnode.dev" target="_blank">
-                <SiHashnode />
+              <Link href="https://mnije.tistory.com/" target="_blank">
+                <SiTistory />
               </Link>
             </li>
           </ul>

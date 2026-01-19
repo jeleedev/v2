@@ -1,13 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { SiTistory, SiSmugmug } from "react-icons/si";
-import { LuGithub } from "react-icons/lu";
-import Link from "next/link";
+import { SiSmugmug } from "react-icons/si";
 import FolderCard from "./FolderCard";
 import ScrollingText from "./ScrollingText";
+import Header from "./Header";
+import { useState } from "react";
 
 const folders = [
   { slug: "about", link: "about", color: "bg-pink-500" },
@@ -18,18 +17,6 @@ const folders = [
 
 export default function Hero() {
   const [visitorName, setVisitorName] = useState("");
-
-  useEffect(() => {
-    const savedName = localStorage.getItem("visitorName");
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (savedName) setVisitorName(savedName);
-  }, []);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setVisitorName(value);
-    localStorage.setItem("visitorName", value);
-  };
 
   return (
     <section id="hero">
@@ -43,53 +30,7 @@ export default function Hero() {
           />
         </div>
 
-        <div className="absolute top-0 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="mx-auto flex items-center justify-between px-5 py-8 lg:px-20 2xl:px-40"
-          >
-            <Link href={"/"}>
-              <h1 className="text-xl font-semibold tracking-tighter text-zinc-800 2xl:text-2xl">
-                J.Portfolio
-              </h1>
-            </Link>
-
-            <input
-              type="text"
-              placeholder="What's your name?"
-              value={visitorName}
-              onChange={handleChange}
-              className="hidden min-w-96 rounded-md border border-black/10 bg-black/5 px-4 py-2 text-[13px] outline-none md:block"
-            />
-            <ul className="flex items-center space-x-6 text-xl text-zinc-600 sm:space-x-7 2xl:text-2xl">
-              <li className="cursor-pointer transition-all duration-200 active:scale-90">
-                <Link
-                  href={"https://github.com/jeonqeun"}
-                  target="_blank"
-                  className=""
-                >
-                  <LuGithub />
-                </Link>
-              </li>
-              <li className="cursor-pointer transition-all duration-200 active:scale-90">
-                <Link href={"https://mnije.tistory.com/"} target="_blank">
-                  <SiTistory />
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-          <div className="px-5 md:hidden">
-            <input
-              type="text"
-              placeholder="What's your name?"
-              value={visitorName}
-              onChange={(e) => setVisitorName(e.target.value)}
-              className="w-full rounded-md border border-black/10 bg-black/5 px-4 py-2 text-[13px] outline-none"
-            />
-          </div>
-        </div>
+        <Header visitorName={visitorName} setVisitorName={setVisitorName} />
 
         <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-5 lg:w-fit">
           <div className="mx-auto flex flex-col items-start justify-center">
@@ -108,24 +49,24 @@ export default function Hero() {
                   <SiSmugmug />
                 </span>
               </motion.div>
-              <motion.div
+              <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.27 }}
                 className="mb-8 text-6xl font-medium tracking-tighter text-zinc-800 sm:text-7xl md:text-8xl"
               >
-                <div className="mb-1.5 flex items-center gap-3 md:gap-8">
+                <span className="mb-1.5 flex items-center gap-3 md:gap-8">
                   <span>I&apos;m</span>
                   <span>Jeongeun,</span>
-                </div>
-                <div className="flex flex-col sm:flex-row sm:gap-3 md:gap-8">
-                  <div className="mb-1.5 flex items-center gap-3 md:gap-8">
+                </span>
+                <span className="flex flex-col sm:flex-row sm:gap-3 md:gap-8">
+                  <span className="mb-1.5 flex items-center gap-3 md:gap-8">
                     <span>Building</span>
                     <span>Web</span>
-                  </div>
+                  </span>
                   <span>UI.</span>
-                </div>
-              </motion.div>
+                </span>
+              </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -136,9 +77,12 @@ export default function Hero() {
                 이정은입니다.
               </motion.p>
             </div>
-            <div className="flex items-center gap-6 sm:gap-12 xl:hidden">
+            <nav
+              aria-label="포트폴리오 카테고리"
+              className="flex items-center gap-6 sm:gap-12 xl:hidden"
+            >
               {folders.map((folder, i) => (
-                <motion.div
+                <motion.ul
                   key={folder.slug}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -147,16 +91,21 @@ export default function Hero() {
                     delay: 0.45 + i * 0.08,
                   }}
                 >
-                  <FolderCard {...folder} />
-                </motion.div>
+                  <li>
+                    <FolderCard {...folder} />
+                  </li>
+                </motion.ul>
               ))}
-            </div>
+            </nav>
           </div>
         </div>
 
-        <div className="hidden items-center gap-8 xl:absolute xl:top-1/2 xl:left-20 xl:flex xl:-translate-y-1/2 xl:flex-col 2xl:left-40 2xl:gap-10">
+        <nav
+          aria-label="포트폴리오 카테고리"
+          className="hidden items-center gap-8 xl:absolute xl:top-1/2 xl:left-20 xl:flex xl:-translate-y-1/2 xl:flex-col 2xl:left-40 2xl:gap-10"
+        >
           {folders.map((folder, i) => (
-            <motion.div
+            <motion.ul
               key={folder.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -165,10 +114,12 @@ export default function Hero() {
                 delay: 0.45 + i * 0.08,
               }}
             >
-              <FolderCard {...folder} />
-            </motion.div>
+              <li>
+                <FolderCard {...folder} />
+              </li>
+            </motion.ul>
           ))}
-        </div>
+        </nav>
 
         <motion.div
           initial={{ opacity: 0, y: 6 }}
@@ -177,9 +128,9 @@ export default function Hero() {
           className="absolute bottom-0 w-full"
         >
           <div className="flex flex-wrap items-center justify-between px-5 pb-10 text-[#878787] lg:px-20 2xl:px-40">
-            <p>2025 Web Publisher Portfolio</p>
+            <p>2026 Web Publisher Portfolio</p>
             <p>
-              © 2025 <span className="text-[#F67373]">Jeongeun Lee</span>.
+              © 2026 <span className="text-[#F67373]">Jeongeun Lee</span>.
               Built with Next.js, deployed on Vercel.
             </p>
           </div>

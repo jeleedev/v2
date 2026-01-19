@@ -59,7 +59,7 @@ export default function Footer() {
           className="w-full border-t border-zinc-300 pt-10"
         >
           <p className="text-center text-sm text-zinc-500">
-            © 2025 Jeongeun Lee. Built with Next.js, deployed on Vercel.
+            © 2026 Jeongeun Lee. Built with Next.js, deployed on Vercel.
           </p>
         </motion.div>
       </div>

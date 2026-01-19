@@ -137,7 +137,7 @@ export const projects = [
   },
   {
     id: 13,
-    title: "2025 포트폴리오",
+    title: "2026 포트폴리오",
     description:
       "개인 프로젝트와 웹 퍼블리싱 작업을 정리한 \n포트폴리오 사이트",
     demo: "https://jeongeun.vercel.app",

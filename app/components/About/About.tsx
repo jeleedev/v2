@@ -16,9 +16,9 @@ export default function About() {
       viewport={{ once: true, amount: 0.2 }}
     >
       <div className="w-full px-5 py-20 lg:px-20 2xl:px-40">
-        <p className="mb-10 text-3xl font-semibold tracking-tighter 2xl:text-4xl">
+        <h2 className="mb-10 text-3xl font-semibold tracking-tighter 2xl:text-4xl">
           About
-        </p>
+        </h2>
 
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:gap-20 2xl:gap-40">
           <motion.div
@@ -31,32 +31,32 @@ export default function About() {
             <div className="relative aspect-square w-full shrink-0 sm:w-40 lg:w-80">
               <Image
                 src={"/common/profile.png"}
-                alt=""
+                alt="웹 퍼블리셔 이정은의 프로필 사진"
                 fill
                 priority
                 className="object-cover"
               />
             </div>
             <div className="w-full min-w-0 border-t border-b border-zinc-200 px-1 py-6">
-              <p className="mb-4 text-lg font-medium">이정은 LEE JEONGEUN</p>
-              <div className="space-y-1 text-sm text-zinc-500">
-                <div className="flex items-center gap-2">
+              <h3 className="mb-4 text-lg font-medium">이정은 LEE JEONGEUN</h3>
+              <ul className="space-y-1 text-sm text-zinc-500">
+                <li className="flex items-center gap-2">
                   <LuCalendar />
                   <span>1998.03.07</span>
-                </div>
-                <div className="flex items-center gap-2">
+                </li>
+                <li className="flex items-center gap-2">
                   <LuMapPin />
                   <span>Busan, South Korea</span>
-                </div>
-                <div className="flex items-center gap-2">
+                </li>
+                <li className="flex items-center gap-2">
                   <LuPhone />
                   <span>010-7259-0307</span>
-                </div>
-                <div className="flex items-center gap-2">
+                </li>
+                <li className="flex items-center gap-2">
                   <LuMail />
                   <span>jeunlee.dev@gmail.com</span>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </motion.div>
 
@@ -67,6 +67,7 @@ export default function About() {
             viewport={{ once: true }}
             className="min-w-0 flex-1"
           >
+            {/* about me */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +75,7 @@ export default function About() {
               viewport={{ once: true }}
               className="flex flex-col items-start gap-6 border-b border-zinc-200 pr-5 pb-10 lg:pb-14 2xl:flex-row 2xl:gap-14"
             >
-              <p className="min-w-28 font-medium uppercase">about me</p>
+              <h3 className="min-w-28 font-medium uppercase">about me</h3>
               <div className="leading-loose">
                 <p className="mb-6">
                   웹 퍼블리셔는 코드와 디자인 사이에서 경험을 만드는 직업이라고
@@ -88,12 +89,10 @@ export default function About() {
                     퍼블리싱 역량을 기반으로 프론트엔드 개발 흐름과 관련 기술
                     전반을 폭넓게 이해하고 있습니다.
                   </li>
-
                   <li className="py-0.5">
                     웹 표준과 접근성을 준수하는 퍼블리싱 역량을 키우기 위해
                     웹디자인개발기능사 자격을 취득을 준비 중입니다.
                   </li>
-
                   <li className="py-0.5">
                     비전공자로서 부족한 컴퓨터공학 기초를 보완하기 위해
                     정보처리기사를 취득했습니다.
@@ -114,6 +113,7 @@ export default function About() {
                 </ul>
               </div>
             </motion.div>
+            {/* education & license */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,8 +121,9 @@ export default function About() {
               viewport={{ once: true }}
               className="flex flex-wrap justify-between gap-10 border-b border-zinc-200 py-10 pr-5 lg:gap-20 lg:py-14"
             >
+              {/* education */}
               <div className="flex flex-col items-start gap-6 2xl:flex-row 2xl:gap-14">
-                <p className="min-w-28 font-medium uppercase">education</p>
+                <h3 className="min-w-28 font-medium uppercase">education</h3>
                 <ul className="space-y-8">
                   <li>
                     <p className="mb-1 text-sm text-zinc-500">
@@ -142,8 +143,9 @@ export default function About() {
                   </li>
                 </ul>
               </div>
+              {/* license */}
               <div className="flex min-w-50 flex-1 flex-col items-start gap-6 2xl:flex-row 2xl:gap-14">
-                <p className="min-w-28 font-medium uppercase">license</p>
+                <h3 className="min-w-28 font-medium uppercase">license</h3>
                 <ul className="space-y-8">
                   <li>
                     <p className="mb-1 text-sm text-zinc-500">2025.10 ~</p>
@@ -160,6 +162,7 @@ export default function About() {
                 </ul>
               </div>
             </motion.div>
+            {/* used tools */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -167,23 +170,23 @@ export default function About() {
               viewport={{ once: true }}
               className="flex flex-col items-start gap-6 pt-10 pr-5 lg:pt-14 2xl:flex-row 2xl:gap-14"
             >
-              <p className="min-w-28 font-medium uppercase">USED TOOLS</p>
+              <h3 className="min-w-28 font-medium uppercase">USED TOOLS</h3>
               <div className="flex flex-wrap gap-10">
                 <div>
-                  <p className="mb-4">FRONTEND</p>
-                  <div className="flex flex-wrap items-center gap-2">
+                  <h4 className="mb-4">FRONTEND</h4>
+                  <ul className="flex flex-wrap items-center gap-2">
                     {tools.slice(0, 8).map((tool) => (
                       <ToolItem key={tool.id} {...tool} />
                     ))}
-                  </div>
+                  </ul>
                 </div>
                 <div>
-                  <p className="mb-4">DESIGN & COMMUNICATION</p>
-                  <div className="flex flex-wrap items-center gap-2">
+                  <h4 className="mb-4">DESIGN & COMMUNICATION</h4>
+                  <ul className="flex flex-wrap items-center gap-2">
                     {tools.slice(-3).map((tool) => (
                       <ToolItem key={tool.id} {...tool} />
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             </motion.div>

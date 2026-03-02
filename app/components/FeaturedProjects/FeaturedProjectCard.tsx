@@ -38,23 +38,24 @@ export default function FeaturedProjectCard({
   );
 
   return (
-    <div className="mb-10">
-      <div
-        className="group relative mb-6 aspect-1920/1080 w-full cursor-pointer overflow-hidden border border-zinc-200"
+    <article className="mb-10">
+      <button
+        className="group relative mb-6 aspect-1920/1080 w-full cursor-pointer overflow-hidden border border-zinc-200 focus-visible:outline-2"
         onClick={() => setOpen(true)}
+        aria-label={`${title} 이미지 더보기`}
       >
         {images && (
           <Image
             src={images[0]}
-            alt="thumbnail"
+            alt={`${title} 프로젝트 메인 화면`}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105"
           />
         )}
 
-        <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
 
-        <span className="absolute right-4 bottom-4 flex translate-y-1 items-center gap-1 text-sm tracking-wide text-zinc-50 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+        <span className="absolute right-4 bottom-4 flex translate-y-1 items-center gap-1 text-sm tracking-wide text-zinc-50 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
           <svg
             width="16"
             height="16"
@@ -66,18 +67,20 @@ export default function FeaturedProjectCard({
           </svg>
           이미지 더보기
         </span>
-      </div>
+      </button>
 
       {images && <GalleryModal images={images} open={open} setOpen={setOpen} />}
 
       <div className="space-y-6 px-2.5">
         <div className="flex items-center justify-between">
-          <p className="text-xl font-semibold">{title}</p>
+          <h3 className="text-xl font-semibold">{title}</h3>
           <div className="flex items-center gap-2 2xl:text-lg">
             {demo && (
               <Link
                 href={demo}
                 target="_blank"
+                aria-label={`${title} 데모 사이트 (새 창 열림)`}
+                rel="noopener noreferrer"
                 className="rounded-lg bg-zinc-50 p-2 transition-all duration-300 hover:bg-zinc-100 active:scale-95"
               >
                 <LuGlobe />
@@ -87,6 +90,8 @@ export default function FeaturedProjectCard({
               <Link
                 href={github}
                 target="_blank"
+                aria-label={`${title} GitHub 저장소 (새 창 열림)`}
+                rel="noopener noreferrer"
                 className="rounded-lg bg-zinc-50 p-2 transition-all duration-300 hover:bg-zinc-100 active:scale-95"
               >
                 <LuGithub />
@@ -141,17 +146,17 @@ export default function FeaturedProjectCard({
           </li>
         </ul>
 
-        <div className="flex flex-wrap items-center gap-1.5">
+        <ul className="flex flex-wrap items-center gap-1.5">
           {tech?.map((e) => (
-            <span
+            <li
               key={e.name}
               className={`tag-${e.color} rounded-full border px-2.5 py-1 text-xs font-medium`}
             >
               {e.name}
-            </span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </div>
+    </article>
   );
 }
